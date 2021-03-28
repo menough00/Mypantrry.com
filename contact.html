@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}- contact{% endblock %}
+{% block main %}
+<div class="jumbotron text-center">
+    <h1 class="display-4"><img src="{{ url_for("static",filename="img/logo.png") }}" alt="mypantryy"></h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+
+</div>
+
+<div class="card col-12 col-md-8 col-lg-6 mx-auto">
+      <div class="card-body">
+        <h5 class="card-title">Contact Us</h5>
+
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" type="email">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Example select</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect2">Example multiple select</label>
+                <select class="form-control" id="exampleFormControlSelect2" multiple>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </form>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a class="btn btn-primary" href="#">Go somewhere</a>
+    </div>
+</div>
+{% endblock %}

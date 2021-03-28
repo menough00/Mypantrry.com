@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}- login{% endblock %}
+{% block main %}
+<div class="jumbotron text-center">
+	<h1 class="display-4"><img src="{{ url_for("static",filename="img/logo.png") }}" alt="mypantryy"/></h1>
+	<p class="lead"></p>
+	<hr class="my-4">
+
+</div>
+
+
+<p>
+
+</p>
+<div class="card mx-auto" style="width: 18rem;">
+	<div class="card-body">
+		<h5 class="card-title text-center">Login</h5>
+		<a href="/register"><p class="text-center">Click here to Register</p></a>
+		<form action="/login" method="post">
+			<div class="form-group">
+				<label for="username">Username:</label>
+				<input type="text" class="form-control" id="username" name="username" aria-describedby="username">
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<input type="password" class="form-control" id="password" name="password">
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+			<button type="Cancel" class="btn btn-primary">Cancel</button>
+			<button type="Forgot" class="btn btn-primary">Forgot</button>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
