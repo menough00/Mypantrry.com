@@ -2,32 +2,63 @@
 
 {% block title %}- home{% endblock %}
 {% block main %}
-			<div class="jumbotron text-center">
-				<h1 class="display-4"><img src="{{ url_for("static",filename="img/logo.png") }}" alt="mypantryy"></h1>
-				<p class="lead"></p>
-				<hr class="my-4">
+<div class="jumbotron text-center">
+	<h1 class="display-4"><img src="{{ url_for("static",filename="img/logo.png") }}" alt="mypantryy"></h1>
+	<p class="lead"></p>
+	<hr class="my-4">
 
-			</div>
+</div>
 
+<div class="jumbotron bg-transparent">
+	<div class="row no-gutter d-flex align-items-center">
 
-		<p>
-			<h2>Hello! Welcome to Mypantryy.com!</h2>
-		Taking a trip to your local grocery store for your weekly groceries can be a hassle sometimes, especially
-if you forgot your list, did not make a list or don’t remember your food inventory or
-essentials that you’ve in stock at home. Having over stock items of food, essentials that are soon to be expired
-can cost consumers money and be bad for our ecological footprint. According to statistics and research,
-the United states is the leader of food waste.About 40 million tons of food per year with the average person of 219lbs per person,
-due to spoilage food.
-		</p>
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Start your Journey today!</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Inventory control and task manager</h6>
-    <p class="card-text">Create account or register to start controlling your inventory and save money by not wasting food.
-	Today you can change your ecological footprint by not wasting food by buying to much or do to food
-		spoilage.</p>
-    <a href="#" class="card-link">Login</a>
-    <a href="#" class="card-link">Register</a>
-  </div>
+		<div class="col-12 col-md-6 col-lg-8">
+			<h2>Hello{% if "name" in session %}, {{session.name}}{% endif %}! </h2>
+			<p>Taking a trip to your local grocery store for your weekly groceries can be a hassle sometimes, especially
+				if you forgot your list, did not make a list or don’t remember your food inventory or
+				essentials that you’ve in stock at home. Having over stock items of food, essentials that are soon to be expired
+				can cost consumers money and be bad for our ecological footprint. According to statistics and research,
+				the United states is the leader of food waste.About 40 million tons of food per year with the average person of 219lbs per person,
+				due to spoilage food.
+			</p>
+		</div>
+		<figure class="col-12 col-md-6 col-lg-4 ">
+			<img src="{{ url_for("static",filename="img/fridge.jpeg") }}" alt="image of open refrigerator"
+			class="img-fluid">
+
+		</figure>
+	</div>
+</div>
+<div class="card-deck mb-2 clearfix">
+	<div class="card">
+		<img src="{{ url_for("static",filename="img/waste.jpeg") }}" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title">Food Waste</h5>
+			<p class="card-text">About 40 million tons of food per year with the average person of 219lbs per person,
+				due to spoilage food.</p>
+		</div>
+	</div>
+	{% if "userID" not in session %}
+	<div class="card d-flex align-items-center">
+		<div class="card-body ">
+			<h5 class="card-title">Start your Journey today!</h5>
+			<h6 class="card-subtitle mb-2 text-muted">Inventory control and task manager</h6>
+			<p class="card-text">Create account or register to start controlling your inventory and save money by not wasting food.
+				Today you can change your ecological footprint by not wasting food by buying to much or do to food
+				spoilage.</p>
+			<hr/>
+			<a href="/login" class="card-link">Login</a>
+			<a href="/register" class="card-link">Register</a>
+		</div>
+	</div>
+	{% endif %}
+	<div class="card">
+		<img src="{{ url_for("static",filename="img/inventory.jpg") }}" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title">Food Waste</h5>
+			<p class="card-text">About 40 million tons of food per year with the average person of 219lbs per person,
+				due to spoilage food.</p>
+		</div>
+	</div>
 </div>
 {% endblock %}
