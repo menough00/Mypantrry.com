@@ -9,7 +9,7 @@ app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"]=True
 app.config["DEBUG"]=True
 app.config["TESTING"]=True
-app.config["SECRET_KEY"]="baberuth"
+app.config["SECRET_KEY"]=""
 app.config["SESSION_TYPE"]="filesystem"
 app.config["SESSION_PERMANENT"]=False
 
@@ -96,7 +96,7 @@ def setup():
         db.execute(query, password=password)
         query = "select userID from login where username='admin'"
         results = query_dict(query)
-        query = "insert into account(userid, name, email) values(:userid, 'Admin', 'admin@mypantryy.com');"
+        query = "insert into account(userid, name, email) values(:userid, 'Admin', '');"
         db.execute(query, userid=results[0]["userID"])
     except:
         flash('Unable to create starting database data.', 'danger')
